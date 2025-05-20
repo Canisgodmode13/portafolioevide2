@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Unidad 03 | Actividad 03 | JavaScript</title>
+  <style>
+    body {
+      background-color: #e0f7ff;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 60px;
+    }
+
+    h1 {
+      color: #003366;
+    }
+
+    h2 {
+      color: #0059b3;
+      margin-bottom: 30px;
+    }
+
+    #resultado {
+      margin-top: 30px;
+      font-size: 28px;
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Unidad 03 | Actividad 03 | Tema: JavaScript</h1>
+  <h2>Operación Aritmética</h2>
+  <div id="resultado"></div>
+
+  <script>
+    let operacion = prompt("¿Qué operación deseas realizar? (suma, resta, multiplicación, división)");
+    let num1 = parseFloat(prompt("Ingresa el primer número:"));
+    let num2 = parseFloat(prompt("Ingresa el segundo número:"));
+    let resultado;
+    let simbolo;
+
+    if (isNaN(num1) || isNaN(num2)) {
+      document.getElementById("resultado").textContent = "¡Entrada inválida! Por favor ingresa solo números.";
+    } else {
+      switch (operacion.toLowerCase()) {
+        case "suma":
+          resultado = num1 + num2;
+          simbolo = "+";
+          break;
+        case "resta":
+          resultado = num1 - num2;
+          simbolo = "-";
+          break;
+        case "multiplicación":
+        case "multiplicacion":
+          resultado = num1 * num2;
+          simbolo = "×";
+          break;
+        case "división":
+        case "division":
+          if (num2 !== 0) {
+            resultado = num1 / num2;
+            simbolo = "÷";
+          } else {
+            resultado = "No se puede dividir entre 0";
+            simbolo = "÷";
+          }
+          break;
+        default:
+          resultado = "Operación no reconocida";
+          simbolo = "?";
+      }
+
+      document.getElementById("resultado").textContent = 
+        (typeof resultado === "number") ? `${num1} ${simbolo} ${num2} = ${resultado}` : resultado;
+    }
+  </script>
+
+</body>
+</html>

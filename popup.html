@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Unidad 03 | Actividad 02</title>
+  <style>
+    body {
+      background-color: #f0f8ff;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 60px;
+    }
+
+    h1 {
+      color: #003366;
+    }
+
+    h2 {
+      color: #0059b3;
+      margin-top: 40px;
+    }
+
+    #nombreUsuario {
+      font-size: 28px;
+      font-weight: bold;
+      color: green;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Unidad 03 | Actividad 02 | Tema: Alert, Confirm y Prompt</h1>
+  <h2 id="mensajeBienvenida"></h2>
+  <div id="nombreUsuario"></div>
+
+  <script>
+    alert("Hola Rubén, bienvenido al sitio web...");
+
+    let nombre = prompt("¿Cuál es tu nombre?");
+    
+    if (nombre) {
+      let confirmar = confirm("¿Quieres mostrar tu nombre en la página?");
+      if (confirmar) {
+        document.getElementById("mensajeBienvenida").textContent = "¡Bienvenido, " + nombre + "!";
+        document.getElementById("nombreUsuario").textContent = "Tu nombre ha sido registrado con éxito.";
+      } else {
+        document.getElementById("mensajeBienvenida").textContent = "Nombre no mostrado por decisión del usuario.";
+      }
+    } else {
+      document.getElementById("mensajeBienvenida").textContent = "No se proporcionó ningún nombre.";
+    }
+  </script>
+
+</body>
+</html>

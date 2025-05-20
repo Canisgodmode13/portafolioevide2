@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Unidad 03 | Actividad 04 | Tema: JavaScript</title>
+  <style>
+    body {
+      background-color: #d9ecff;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 60px;
+      color: #003366;
+    }
+
+    h1 {
+      margin-bottom: 40px;
+    }
+
+    .mensaje {
+      font-size: 22px;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Unidad 03 | Actividad 04 | Tema: JavaScript</h1>
+
+  <div id="mensajes"></div>
+
+  <script>
+    const mensajes = [
+      "UPSLP",
+      "UCEM",
+      "UPSLP!!!",
+      "ITESM (Campus San Luis Potosí)",
+      "ITESM (Campus San Luis Potosí)",
+      "ITESM (CAMPUS SAN LUIS POTOSÍ)",
+      "ITESM (Campus San Luis Potosí)"
+    ];
+
+    const contenedor = document.getElementById("mensajes");
+
+    mensajes.forEach(texto => {
+      const div = document.createElement("div");
+      div.className = "mensaje";
+      div.textContent = texto;
+      contenedor.appendChild(div);
+    });
+  </script>
+
+</body>
+</html>
