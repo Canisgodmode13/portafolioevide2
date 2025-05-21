@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Unidad 03 | Actividad 06 | Tema: JavaScript</title>
+  <style>
+    body {
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+    h2 {
+      margin-bottom: 10px;
+    }
+    .separador {
+      margin: 20px 0;
+      border-bottom: 1px dotted #ccc;
+    }
+    label, select, button {
+      margin-top: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Unidad 03 | Actividad 06 | Tema: JavaScript</h2>
+  <p>Presiona un botón para ejecutar el código....................................................................................................................................................</p>
+
+  <div class="separador"></div>
+
+  <h3>Acción...</h3>
+
+  <label for="color">Elige un color de fondo:</label>
+  <select id="color">
+    <option value="blue">Azul</option>
+    <option value="red">Rojo</option>
+    <option value="green">Verde</option>
+  </select>
+
+  <br><br>
+  <button onclick="cambiarFondo()">Cambiar fondo</button>
+
+  <script>
+    function cambiarFondo() {
+      const colorSeleccionado = document.getElementById("color").value;
+      document.body.style.backgroundColor = colorSeleccionado;
+    }
+  </script>
+
+</body>
+</html>

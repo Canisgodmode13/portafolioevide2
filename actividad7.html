@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Unidad 03 | Actividad 07 | Tema: JavaScript</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    label {
+      font-weight: bold;
+    }
+    .form-section {
+      margin-bottom: 20px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Unidad 03 | Actividad 07 | Tema: JavaScript</h2>
+
+  <form id="comboForm">
+
+    <div class="form-section">
+      <label>Form Name:</label><br>
+      <input type="text" name="nombre" placeholder="Escribe tu nombre">
+    </div>
+
+    <div class="form-section">
+      <label>Elegir el tamaño:</label><br>
+      <input type="radio" name="tamano" value="Pequeño"> Combo Pequeño<br>
+      <input type="radio" name="tamano" value="Intermedio"> Combo Intermedio<br>
+      <input type="radio" name="tamano" value="Grande"> Combo Grande<br>
+    </div>
+
+    <div class="form-section">
+      <label>Elegir Complementos:</label><br>
+      <input type="checkbox" name="complementos" value="Queso"> Queso<br>
+      <input type="checkbox" name="complementos" value="Jamón"> Jamón<br>
+      <input type="checkbox" name="complementos" value="Tocino"> Tocino<br>
+      <input type="checkbox" name="complementos" value="Champiñón"> Champiñón<br>
+      <input type="checkbox" name="complementos" value="Pepperoni"> Pepperoni<br>
+    </div>
+
+    <div class="form-section">
+      <label>Elige complemento:</label><br>
+      <select name="complementoSimple">
+        <option value="Ninguno">Ninguno</option>
+        <option value="Queso extra">Queso extra</option>
+        <option value="Guacamole">Guacamole</option>
+        <option value="Papas">Papas</option>
+      </select>
+    </div>
+
+    <div class="form-section">
+      <label>Elige otras opciones:</label><br>
+      <input type="checkbox" name="otros" value="Mayonesa"> Mayonesa
+      <input type="checkbox" name="otros" value="Cátsup"> Cátsup
+      <input type="checkbox" name="otros" value="Mostaza"> Mostaza
+      <input type="checkbox" name="otros" value="Ranch"> Ranch
+      <input type="checkbox" name="otros" value="Pepinillos"> Pepinillos
+      <input type="checkbox" name="otros" value="Jalapeños"> Jalapeños
+    </div>
+
+    <div class="form-section">
+      <label>Archivos:</label><br>
+      <input type="file" name="archivo">
+    </div>
+
+    <div class="form-section">
+      <label>Color:</label><br>
+      <input type="color" name="color">
+    </div>
+
+    <div class="form-section">
+      <label>Fecha:</label><br>
+      <input type="date" name="fecha">
+    </div>
+
+    <div class="form-section">
+      <label>Tiempo:</label><br>
+      <input type="time" name="tiempo">
+    </div>
+
+    <div class="form-section">
+      <label>Semana:</label><br>
+      <input type="week" name="semana">
+    </div>
+
+    <div class="form-section">
+      <label>Mes:</label><br>
+      <input type="month" name="mes">
+    </div>
+
+    <div class="form-section">
+      <label>Números:</label><br>
+      <input type="number" name="numero" value="50">
+    </div>
+
+    <div class="form-section">
+      <label>Rango:</label><br>
+      <input type="range" name="rango" min="0" max="100">
+    </div>
+
+    <button type="button" onclick="mostrarDatos()">Mostrar selección</button>
+
+  </form>
+
+  <div id="resultado" style="margin-top: 20px; font-weight: bold;"></div>
+
+  <script>
+    function mostrarDatos() {
+      const form = document.getElementById('comboForm');
+      const nombre = form.nombre.value;
+      const tamano = form.tamano.value;
+      const complementoSimple = form.complementoSimple.value;
+      const archivo = form.archivo.value.split("\\").pop();
+      const color = form.color.value;
+      const fecha = form.fecha.value;
+      const tiempo = form.tiempo.value;
+      const semana = form.semana.value;
+      const mes = form.mes.value;
+      const numero = form.numero.value;
+      const rango = form.rango.value;
+
+      const complementos = [...form.querySelectorAll('input[name="complementos"]:checked')].map(c => c.value);
+      const otros = [...form.querySelectorAll('input[name="otros"]:checked')].map(c => c.value);
+
+      let mensaje = `
+        Nombre: ${nombre}<br>
+        Tamaño: ${tamano}<br>
+        Complementos: ${complementos.join(', ') || 'Ninguno'}<br>
+        Complemento simple: ${complementoSimple}<br>
+        Otras opciones: ${otros.join(', ') || 'Ninguna'}<br>
+        Archivo: ${archivo || 'No seleccionado'}<br>
+        Color elegido: ${color}<br>
+        Fecha: ${fecha}<br>
+        Tiempo: ${tiempo}<br>
+        Semana: ${semana}<br>
+        Mes: ${mes}<br>
+        Número: ${numero}<br>
+        Rango: ${rango}
+      `;
+
+      document.getElementById("resultado").innerHTML = mensaje;
+    }
+  </script>
+
+</body>
+</html>
