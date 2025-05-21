@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portafolio Programación Web</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #e6f0ff;
+      margin: 0;
+      padding: 0;
+      color: #003366;
+    }
+
+    header {
+      background-color: #0059b3;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    h2 {
+      margin-top: 10px;
+      font-weight: normal;
+      font-size: 18px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .unidad {
+      cursor: pointer;
+      font-weight: bold;
+      background-color: #cce0ff;
+      padding: 10px;
+      margin-top: 15px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .unidad:hover {
+      background-color: #b3d1ff;
+    }
+
+    .actividades {
+      display: none;
+      margin-top: 10px;
+      margin-left: 20px;
+    }
+
+    .actividades li {
+      margin: 6px 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: #004080;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Emmanuel Maximiliano Aragón Arias_185972</h1>
+    <h2>Programación Web Portafolio</h2>
+  </header>
+
+  <div class="container">
+
+    <div class="unidad" onclick="toggle('u1')">Unidad No.1</div>
+    <ul id="u1" class="actividades">
+      <li><a href="#">Actividad No.1 (Hola Mundo)</a></li>
+      <li><a href="#">Actividad No.2 (Títulos)</a></li>
+      <li><a href="#">Actividad No.2-1 (Mapa de sitio)</a></li>
+      <li><a href="#">Actividad No.3 (Párrafo)</a></li>
+      <li><a href="#">Actividad No.4 (Listas I)</a></li>
+      <li><a href="#">Actividad No.4-1 (Plan de sitio)</a></li>
+      <li><a href="#">Actividad No.5 (Listas II)</a></li>
+      <li><a href="#">Actividad No.6 (Widget)</a></li>
+      <li><a href="#">Actividad No.7 (Enlaces)</a></li>
+      <li><a href="#">Actividad No.8 (Imágenes)</a></li>
+      <li><a href="#">Actividad No.9 (Formatos)</a></li>
+      <li><a href="#">Actividad No.10 (Química Orgánica)</a></li>
+      <li><a href="#">Actividad No.11 (Mapas)</a></li>
+    </ul>
+
+    <div class="unidad" onclick="toggle('u2')">Unidad No.2</div>
+    <ul id="u2" class="actividades">
+      <li><a href="#">Actividad pendiente...</a></li>
+    </ul>
+
+      <div class="unidad" onclick="toggle('u3')">Unidad No.3</div>
+<ul id="u3" class="actividades">
+  <li><a href="https://canisgodmode13.github.io/portafolioevide2/unidad3/hola.html" target="_blank">holamundo.html</a></li>
+  <li><a href="https://canisgodmode13.github.io/portafolioevide2/unidad3/popup.html" target="_blank">popup.html</a></li>
+  <li><a href="https://canisgodmode13.github.io/portafolioevide2/unidad3/calculadora.html" target="_blank">calculadora.html</a></li>
+  <li><a href="https://canisgodmode13.github.io/portafolioevide2/unidad3/actividad3.html" target="_blank">actividad3.html</a></li>
+  <li><a href="https://canisgodmode13.github.io/portafolioevide2/unidad3/actividad4.html" target="_blank">actividad4.html</a></li>
+  <li><a href="https://canisgodmode13.github.io/portafolioevide2/unidad3/actividad6.html" target="_blank">actividad6.html</a></li>
+  <li><a href="https://canisgodmode13.github.io/portafolioevide2/unidad3/actividad7.html" target="_blank">actividad.html</a></li>
+</ul>
+
+
+    <div class="unidad" onclick="toggle('proyecto')">Proyecto</div>
+    <ul id="proyecto" class="actividades">
+      <li><a href="#">Proyecto Final</a></li>
+    </ul>
+
+  </div>
+
+  <script>
+    function toggle(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === "none" || el.style.display === "") ? "block" : "none";
+    }
+  </script>
+
+</body>
+</html>
